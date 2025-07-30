@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="#" routerLinkActive="active">📘Library Management</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ 
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+      <!-- <a class="nav-link" routerLink="/aboutus" routerLinkActive="active">About Us</a> -->
+      <a class="nav-link" routerLink="/user-management" routerLinkActive="active">User Management</a>
+      <a class="nav-link" routerLink="/books" routerLinkActive="active">Books</a>
+      <a class="nav-link" routerLink="/issue-return" routerLinkActive="active">Issue & Return</a>
+      <a class="nav-link" routerLink="/fine-management" routerLinkAcyive="active">Fine Management</a>
+   
+ 
+ 
+    </div>
+   
+    <!-- ✅ Logout aligned to the right -->
+    <div class="navbar-nav ms-auto">
+      <!-- <div class="navbar-nav ms-auto">
+        <span class="nav-link text-light">Welcome {{ userName }}</span>
+      </div> -->
+     
+ 
+     
+     
+     
+     
+      <div class="navbar-nav ms-auto">
+        <span class="nav-link text-light">Welcome, {{ userName }}</span>
+        <a class="nav-link" (click)="logout()">Logout</a>
+      </div>
+     
+    </div>
+  </div>
+</nav>
+ 
+ 
+
+ 
