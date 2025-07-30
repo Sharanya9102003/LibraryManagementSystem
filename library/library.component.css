@@ -1,0 +1,13 @@
+able {
+    width: 100%;
+    border-collapse: collapse;
+  }
+ 
+  th, td {
+    padding: 8px;
+    text-align: center;
+  }
+ 
+  form .form-control {
+    margin-bottom: 10px;
+  }

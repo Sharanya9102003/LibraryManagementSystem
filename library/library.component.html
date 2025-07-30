@@ -1,0 +1,62 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Library Book List</h2>
+ 
+  <!-- Add New Book Form -->
+  <div class="mb-4">
+    <h4>Add New Book</h4>
+    <div class="row g-2">
+      <div class="col">
+        <input [(ngModel)]="newBook.title" type="text" class="form-control" placeholder="Title" />
+      </div>
+      <div class="col">
+        <input [(ngModel)]="newBook.author" type="text" class="form-control" placeholder="Author" />
+      </div>
+      <div class="col">
+        <input [(ngModel)]="newBook.availability" type="number" class="form-control" placeholder="No of books" />
+      </div>
+      <div class="col">
+        <button class="btn btn-primary" (click)="addBook()">Add Book</button>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Book Table -->
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Book No.</th> <!-- Changed from Book ID to Book No. -->
+        <th>Title</th>
+        <th>Author</th>
+        <th>Availability</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books; index as i">
+        <td>{{ i + 1 }}</td> <!-- Serial number instead of book.id -->
+        <td>
+          <input *ngIf="editingIndex === i" [(ngModel)]="book.title" class="form-control" />
+          <span *ngIf="editingIndex !== i">{{ book.title }}</span>
+        </td>
+        <td>
+          <input *ngIf="editingIndex === i" [(ngModel)]="book.author" class="form-control" />
+          <span *ngIf="editingIndex !== i">{{ book.author }}</span>
+        </td>
+        <td>
+          <input *ngIf="editingIndex === i" [(ngModel)]="book.availability" type="number" class="form-control" />
+          <span *ngIf="editingIndex !== i">{{ book.availability }}</span>
+        </td>
+        <td>
+          <button *ngIf="editingIndex !== i" class="btn btn-warning btn-sm" (click)="startEdit(i)">Update</button>
+          <button *ngIf="editingIndex === i" class="btn btn-success btn-sm" (click)="saveEdit()">Save</button>
+          &nbsp;
+          <button class="btn btn-danger btn-sm" (click)="deleteBook(book)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="books.length === 0">
+        <td colspan="5" class="text-center">No books available.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ 
