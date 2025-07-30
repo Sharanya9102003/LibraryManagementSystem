@@ -1,0 +1,134 @@
+/* Main container */
+#register {
+  background: url('/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Background overlay */
+#register::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+/* Heading section */
+.intro-text {
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+  position: relative;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+.intro-text h1 {
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
+}
+
+.intro-text p {
+  font-size: 1rem;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* Registration box */
+.card {
+  width: 100%;
+  max-width: 600px; /* Increased width */
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  position: relative;
+  color: white;
+  margin-top: 10px; /* Move box slightly up */
+}
+
+/* Center the "Register" heading */
+.card h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  color: white;
+}
+
+input {
+  padding: 8px;
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+
+input::placeholder {
+  color: #bbb;
+}
+
+button {
+  padding: 10px;
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Error and message styling */
+.error {
+  color: #ff6b6b;
+  font-size: 0.85em;
+  margin-top: 5px;
+}
+
+.message {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .intro-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .intro-text p {
+    font-size: 0.9rem;
+  }
+}
