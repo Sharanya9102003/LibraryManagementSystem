@@ -1,0 +1,27 @@
+
+/* Container Styling */
+.container {
+  max-width: 100%;
+  padding: 0 20px;
+}
+ 
+/* Table Styling */
+.table {
+  width: 100%;
+  table-layout: auto;
+}
+ 
+.table th,
+.table td {
+  vertical-align: middle;
+  text-align: center;
+  white-space: nowrap;
+}
+ 
+/* Optional: Make the card stretch full width */
+.card {
+  width: 100%;
+  border-radius: 10px;
+}
+ 
+ 

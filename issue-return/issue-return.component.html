@@ -1,0 +1,108 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Issue & Return</h2>
+ 
+  <!-- Issue Form -->
+  <div class="card p-3 mb-4">
+    <h4>Issue a Book</h4>
+    <div class="row g-2">
+      <div class="col-md-3">
+        <select class="form-select" [(ngModel)]="selectedBookId">
+          <option [ngValue]="null">Select Book</option>
+          <option *ngFor="let book of issue" [ngValue]="book.id">
+            {{ book.title }} ({{ isAvailable(book.id) ? 'Available' : 'Issued' }})
+          </option>
+        </select>
+      </div>
+     
+      <div class="col-md-3">
+          <select class="form-select" [(ngModel)]="selectedStudentName">
+            <option [ngValue]="''">Select Student</option>
+            <option *ngFor="let student of students" [ngValue]="student.name">
+              {{ student.name }}
+            </option>
+          </select>
+        </div>
+       
+           
+     
+      <div class="form-floating">
+        <input type="date" class="form-control" id="returnDate" [(ngModel)]="selectedReturnDate" />
+        <label for="returnDate">Return Date</label>
+      </div>
+     
+      <div class="col-md-3">
+        <button class="btn btn-primary w-100" (click)="issueBook()">Issue Book</button>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Issued Books Table -->
+  <div class="card p-3">
+    <h4>Issued Books</h4>
+    <table class="table table-bordered table-hover mt-3">
+      <thead class="table-dark">
+        <tr>
+          <th>Book ID</th>
+          <th>Title</th>
+          <th>User</th>
+          <th>Issue Date</th>
+          <th>Return Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of issuedBooks; let i = index">
+        <td>{{ i + 1 }}</td>
+
+          <td>
+            <ng-container *ngIf="editingBookId === book.id; else viewTitle">
+              <input type="text" class="form-control" [(ngModel)]="editedBook.title" />
+            </ng-container>
+            <ng-template #viewTitle>{{ book.title }}</ng-template>
+          </td>
+          <td>
+            <ng-container *ngIf="editingBookId === book.id; else viewUser">
+              <input type="text" class="form-control" [(ngModel)]="editedBook.user" />
+            </ng-container>
+            <ng-template #viewUser>{{ book.user }}</ng-template>
+          </td>
+          <td>
+            <ng-container *ngIf="editingBookId === book.id; else viewIssueDate">
+              <input type="text" class="form-control" [(ngModel)]="editedBook.issueDate" />
+            </ng-container>
+            <ng-template #viewIssueDate>{{ book.issueDate }}</ng-template>
+          </td>
+          <td>
+            <ng-container *ngIf="editingBookId === book.id; else viewReturnDate">
+              <input type="text" class="form-control" [(ngModel)]="editedBook.returnDate" />
+            </ng-container>
+            <ng-template #viewReturnDate>{{ book.returnDate || '—' }}</ng-template>
+          </td>
+          <td>
+            <span class="badge" [ngClass]="book.returned ? 'bg-success' : 'bg-warning'">
+              {{ book.returned ? 'Returned' : 'Issued' }}
+            </span>
+          </td>
+          <td>
+            <ng-container *ngIf="editingBookId === book.id; else actionButtons">
+              <button class="btn btn-primary btn-sm me-1" (click)="saveEditing()">Save</button>
+              <button class="btn btn-secondary btn-sm" (click)="cancelEditing()">Cancel</button>
+            </ng-container>
+            <ng-template #actionButtons>
+              <button class="btn btn-success btn-sm me-1" (click)="returnBook(book.id)" [disabled]="book.returned">
+                Return
+              </button>
+              <button class="btn btn-danger btn-sm me-1" (click)="deleteIssuedBook(book.id)">
+                Delete
+              </button>
+              <button class="btn btn-warning btn-sm" (click)="startEditing(book)">
+                Edit
+              </button>
+            </ng-template>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
