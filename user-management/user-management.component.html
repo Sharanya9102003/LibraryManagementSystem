@@ -1,0 +1,33 @@
+<h2 style="text-align: center;">Add New Student</h2>
+<input [(ngModel)]="newStudent.name" placeholder="Enter the Student Name">
+&nbsp;
+<input [(ngModel)]="newStudent.email" placeholder="Email">
+&nbsp;
+<button class="primary-btn" (click)="addStudent()">Add Student</button>
+ 
+<h2>Student List</h2>
+
+<table>
+  <tr class="header-row">
+    <th>Student Id</th>
+    <th>Student Name</th>
+    <th>Email</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let student of students; let i = index">
+    <td>{{ i + 1 }}</td>
+    <td>
+      <input *ngIf="editingIndex === i" [(ngModel)]="student.name">
+      <span *ngIf="editingIndex !== i">{{ student.name }}</span>
+    </td>
+    <td>
+      <input *ngIf="editingIndex === i" [(ngModel)]="student.email">
+      <span *ngIf="editingIndex !== i">{{ student.email }}</span>
+    </td>
+    <td>
+      <button class="edit-btn" *ngIf="editingIndex !== i" (click)="startEdit(i)">Edit</button>
+      <button class="primary-btn" *ngIf="editingIndex === i" (click)="saveEdit(student)">Save</button>
+      <button class="delete-btn" (click)="deleteStudent(student.id!)">Delete</button>
+    </td>
+  </tr>
+</table>
