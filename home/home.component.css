@@ -1,0 +1,63 @@
+.ok {
+  background-image: url('/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  height: 100vh;
+  position: relative;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity to control brightness */
+  z-index: -1;
+}
+
+.carousel-img {
+  width: 400px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Card Styling */
+.module-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  background-color: #ffffffcc; /* Slight transparency */
+}
+
+.module-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Card Body Styling */
+.cl {
+  padding: 20px;
+  transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+.cl:hover {
+  background-color: #f5deb3; /* burlywood */
+  border: 2px solid red;
+  border-radius: 12px;
+}
+
+/* Button Styling */
+.btn-outline-primary {
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: white;
+  border-color: #0d6efd;
+}
