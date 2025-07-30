@@ -1,0 +1,250 @@
+{
+  "books": [
+    {
+      "id": "2f5c",
+      "title": "Learning Angular",
+      "author": "Aristeids",
+      "availability": 11
+    },
+    {
+      "id": "a9f2",
+      "title": "Angular in Action",
+      "author": "Jeremy",
+      "availability": 20
+    },
+    {
+      "id": "36f3",
+      "title": "Pro Angular 9",
+      "author": "Adam Freeman",
+      "availability": 5
+    },
+    {
+      "id": "7ff0",
+      "title": "Effective Java",
+      "author": "Joshua",
+      "availability": 12
+    },
+    {
+      "id": "933b",
+      "title": "Head First Java",
+      "author": "Kathy Sierra",
+      "availability": 80
+    },
+    {
+      "id": "f35a",
+      "title": "Java The Complete Reference",
+      "author": "Herbert",
+      "availability": 24
+    },
+    {
+      "id": "0d44",
+      "title": "Spring in Action",
+      "author": "Criag Walls",
+      "availability": 21
+    },
+    {
+      "id": "f9ba",
+      "title": "rani",
+      "author": "rani",
+      "availability": 100
+    },
+    {
+      "id": "3377",
+      "title": "rstdgfhvbnmjkli",
+      "author": "oliukytrdfgcj/.",
+      "availability": 9
+    },
+    {
+      "id": "554e",
+      "title": "angula",
+      "author": "shara",
+      "availability": 100
+    }
+  ],
+  "users": [
+    {
+      "id": "4066",
+      "userName": "Nikhitha",
+      "email": "user@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "2cb8",
+      "userName": "Admin12345",
+      "email": "user@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "fefc",
+      "userName": "edulakanti",
+      "email": "user@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "9b74",
+      "userName": "balaji123",
+      "email": "user@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "ade0",
+      "userName": "sharanya",
+      "email": "user@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "de70",
+      "userName": "sharanya123",
+      "email": "user@gmail.com",
+      "password": "12345678"
+    }
+  ],
+  "students": [
+    {
+      "id": "abd5",
+      "name": "Nikhitha",
+      "email": "nikhithareddy2423@gmail.com"
+    },
+    {
+      "id": "1925",
+      "name": "Sharanya",
+      "email": "sharanya@gmail.com"
+    },
+    {
+      "id": "3222",
+      "name": "rani",
+      "email": "user@gmail.com"
+    },
+    {
+      "id": "50be",
+      "name": "mani",
+      "email": "user@gmail.com"
+    },
+    {
+      "id": "101f",
+      "name": "sravya",
+      "email": "user@gmail.com"
+    }
+  ],
+  "issuedBooks": [
+    {
+      "id": "fc48",
+      "bookId": "933b",
+      "title": "Head First Java",
+      "user": "Sharanya",
+      "issueDate": "22/7/2025",
+      "returnDate": "23/7/2025",
+      "returned": true
+    },
+    {
+      "id": "da81",
+      "bookId": "0d44",
+      "title": "Spring in Action",
+      "user": "Sanjana",
+      "issueDate": "22/7/2025",
+      "returnDate": "31/7/2025",
+      "returned": true
+    },
+    {
+      "id": "27e2",
+      "bookId": "933b",
+      "title": "Head First Java",
+      "user": "Haritha",
+      "issueDate": "22/7/2025",
+      "returnDate": "30/7/2025",
+      "returned": true
+    },
+    {
+      "id": "1e14",
+      "bookId": "7ff0",
+      "title": "Effective Java",
+      "user": "Nikhitha",
+      "issueDate": "22/7/2025",
+      "returnDate": "28/7/2025",
+      "returned": true
+    },
+    {
+      "id": "a404",
+      "bookId": "36f3",
+      "title": "Pro Angular 9",
+      "user": "Sharanya",
+      "issueDate": "23/7/2025",
+      "returnDate": "28/7/2025",
+      "returned": true
+    },
+    {
+      "id": "7b79",
+      "bookId": "7ff0",
+      "title": "Effective Java",
+      "user": "Sharanya",
+      "issueDate": "23/7/2025",
+      "returnDate": "31/7/2025",
+      "returned": false
+    },
+    {
+      "id": "50d3",
+      "bookId": "2f5c",
+      "title": "Learning Angular",
+      "user": "Nikhitha",
+      "issueDate": "23/7/2025",
+      "returnDate": "30/7/2025",
+      "returned": true
+    },
+    {
+      "id": "015e",
+      "bookId": "2f5c",
+      "title": "Learning Angular",
+      "user": "rani",
+      "issueDate": "27/7/2025",
+      "returnDate": "31/7/2025",
+      "returned": true
+    },
+    {
+      "id": "44bb",
+      "bookId": "2f5c",
+      "title": "Learning Angular",
+      "user": "Nikhitha",
+      "issueDate": "28/7/2025",
+      "returnDate": "28/7/2025",
+      "returned": true
+    }
+  ],
+  "fine": [
+    {
+      "id": "5021",
+      "studentName": "Sharanya",
+      "bookTitle": "Head First Java",
+      "issueDate": "22/7/2025",
+      "returnDate": "29/7/2025",
+      "daysLate": 4,
+      "amount": 40
+    },
+    {
+      "id": "92d9",
+      "studentName": "rani",
+      "bookTitle": "Learning Angular",
+      "issueDate": "27/7/2025",
+      "returnDate": "31/7/2025",
+      "daysLate": 1,
+      "amount": 10
+    },
+    {
+      "id": "db9d",
+      "studentName": "Nikhitha",
+      "bookTitle": "Learning Angular",
+      "issueDate": "23/7/2025",
+      "returnDate": "30/7/2025",
+      "daysLate": 4,
+      "amount": 40
+    },
+    {
+      "id": "8dfe",
+      "studentName": "Nikhitha",
+      "bookTitle": "Learning Angular",
+      "issueDate": "23/7/2025",
+      "returnDate": "30/7/2025",
+      "daysLate": 4,
+      "amount": 40
+    }
+  ]
+}
