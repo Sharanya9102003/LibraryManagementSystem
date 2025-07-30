@@ -1,0 +1,44 @@
+
+<div >
+  <h2>Fine Management</h2>
+  <div class="card p-3 mb-4" >
+    <form (ngSubmit)="addFine()">
+      <label>Select Book:</label>
+      <select [(ngModel)]="selectedBookId" name="bookId" required>
+        <option *ngFor="let book of books" [value]="book.id">{{ book.title }}</option>
+      </select>
+ 
+      <label>Select Student:</label>
+      <select [(ngModel)]="selectedStudentId" name="studentId" required>
+        <option *ngFor="let student of students" [value]="student.id">{{ student.name }}</option>
+      </select>
+ 
+        <button type="submit">Check & Add Fine</button>
+      </form>
+  </div>
+ 
+  <h3>Fine Records</h3>
+  <div class="card p-3">
+    <table>
+      <tr >
+        <th>Student</th>
+        <th>Book</th>
+        <th>Issue Date</th>
+        <th>Return Date</th>
+        <th>Days Late</th>
+        <th>Fine Amount</th>
+      </tr>
+      <tr *ngFor="let fine of fines">
+        <td>{{ fine.studentName }}</td>
+        <td>{{ fine.bookTitle }}</td>
+        <td>{{ fine.issueDate }}</td>
+        <td>{{ fine.returnDate }}</td>
+        <td>{{ fine.daysLate }}</td>
+        <td>{{ fine.amount | currency:'INR':'symbol':'1.0-0' }}</td>
+ 
+      </tr>
+    </table>
+ 
+  </div>
+</div>
+ 
